@@ -127,6 +127,8 @@ pre {
  */
 a {
     background-color: transparent;
+    font-family: 'Source Sans Pro';
+
 }
 
 /**
@@ -419,6 +421,8 @@ h6 {
 
 p {
     margin-bottom: 1.5em;
+    font-family: 'Source Sans Pro';
+
 }
 
 dfn,
@@ -971,6 +975,14 @@ textarea {
 /*
 ReKKi Develop
 */
+.container {
+    padding: 0 20px;
+}
+
+.container-full {
+    padding: 0;
+}
+
 .header__row {
     display: flex;
     background-color: black;
@@ -981,19 +993,211 @@ ReKKi Develop
 .header__row-left {
     height: 80px;
 }
-.header__row-left a{
-	height: 100%;
-	display: block;
-	width: 100%;
+
+.header__row-left a {
+    height: 100%;
+    display: block;
+    width: 100%;
 }
+
 .header__row-left img {
     height: 100%;
     width: 100%;
 }
-.header__row-right li{
-	padding: 0 10px;
+
+.header__row-right li {
+    padding: 0 10px;
 }
-.header__row-right a{
-	color: #fff;
-	text-transform: uppercase;
+
+.header__row-right a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.row__sites {
+    /*display: flex;*/
+}
+
+.row__sites-col__wrapper {
+    background: #FFFFFF;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2), 0px 1px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    width: 100%;
+    transition: all 1s ease-in-out;
+    position: relative;
+    padding: 30px 28px 28px;
+    justify-content: center;
+    text-align: center;
+}
+
+.row__sites-col__wrapper .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 12px;
+
+}
+
+.row__sites-col__wrapper:hover {
+
+    width: 110%;
+z-index: 10;
+}
+
+/**/
+.col__wrapper-rating-review-star {
+    display: flex;
+    justify-content: center;
+}
+
+.col__wrapper-rating-review-text {
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #828282;
+}
+
+.col__wrapper-text p{
+    /* type-indicator-lb */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.32px;
+
+    color: #2A42ED;
+}
+
+.col__wrapper-text .bold {
+    font-weight: 600;
+}
+
+/**/
+.row__sites-col__wrapper .inner{
+    position: relative;
+    pointer-events: all;
+    z-index: 1;
+    display: block;
+
+}
+.row__sites-col__wrapper .col__wrapper-button {
+    position: relative;
+    pointer-events: none;
+    z-index: 1;
+    background: #F44337;
+    border-radius: 4px;
+}
+
+.row__sites-col__wrapper .col__wrapper-button a {
+    pointer-events: all;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding: 9px 0;
+}
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);
+    grid-column-gap: 16px;
+
+}
+
+.list .row__sites-col__wrapper p {
+    margin-top: 30px;
+    margin-left: 40px;
+}
+/*
+Heading
+*/
+.row__heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row__heading-col-view{
+    display: flex;
+    align-items: center;
+
+}
+.row__heading-col-view p {
+    margin: 0;
+    margin-right: 12px;
+    text-decoration: underline;
+}
+/*
+Heading
+Switcher
+*/
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #828282;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }

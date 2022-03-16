@@ -175,7 +175,51 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-function test(){
+
+/**
+ *
+ * ReKKi Develop
+ */
+
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+function my_scripts_method(){
+	wp_enqueue_script( 'rekki-jquery',  'https://code.jquery.com/jquery-3.6.0.slim.min.js',array(),null,true);
+	wp_enqueue_script( 'rekki-script', get_template_directory_uri() . '/js/script.js','rekki-jquery-js',null,true);
+}
 
 
+define( 'ALLOW_UNFILTERED_UPLOADS', true );
+
+add_action( 'init', 'register_post_types' );
+function register_post_types(){
+	register_post_type( 'rekki_sports_sites', [
+		'label'  => null,
+		'labels' => [
+			'name'               => 'Sports Sites',
+			'singular_name'      => 'Sports Site',
+			'add_new'            => 'Add new',
+			'add_new_item'       => 'Adding',
+			'edit_item'          => 'Editing',
+			'new_item'           => 'New',
+			'view_item'          => 'Look',
+			'search_items'       => 'Search',
+			'not_found'          => 'Not found',
+			'not_found_in_trash' => 'Not found',
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Sports Sites',
+		],
+		'description'         => '',
+		'public'              => true,
+		'show_in_menu'        => null, // показывать ли в меню адмнки
+		'show_in_rest'        => null, // добавить в REST API. C WP 4.7
+		'rest_base'           => null, // $post_type. C WP 4.7
+		'menu_position'       => null,
+		'menu_icon'           => null,
+		'hierarchical'        => false,
+		'supports'            => [ 'title', 'editor' ,'thumbnail'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'taxonomies'          => [],
+		'has_archive'         => false,
+		'rewrite' => array('slug' => 'sites'),
+		'query_var'           => true,
+	] );
 }
