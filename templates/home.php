@@ -5,12 +5,15 @@
     <div class="container">
         <div class="row__heading">
             <div class="row__heading-col-sort">
-                <p><?php _e('Sort Alphabetically')?></p>
+                <p><?php _e( 'Sort Alphabetically' ) ?></p>
             </div>
-            <div class="row__heading-col-text"><h1><?php _e('BEST SPORTS BETTING
-                    SITES')?></h1></div>
+            <div class="row__heading-col-text">
+                <img src="<?= get_site_url() ?>/wp-content/uploads/2022/03/Flag_of_Canada.svg"
+                     alt="">
+                <h1><?php _e( 'BEST SPORTS BETTING
+                    SITES' ) ?></h1></div>
             <div class="row__heading-col-view">
-                <p><?php _e('Change View')?>
+                <p><?php _e( 'Change View' ) ?>
 
                 </p>
                 <label class="switch">
@@ -44,7 +47,11 @@
 		<?php
 		wp_reset_postdata();
 		?>
-        <a href="#">View All Sports Betting Sites</a>
+        <a href="#" class="view-more">View All Sports Betting Sites</a>
     </div>
+    <footer class="img">
+        <img src="<?= get_site_url() ?>/wp-content/uploads/2022/03/Bottom-Screenshot.png"
+             alt="">
+    </footer>
 <?php
 get_footer();
