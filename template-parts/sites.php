@@ -1,22 +1,26 @@
 <div class="row__sites-col">
     <div class="row__sites-col__wrapper">
         <a href="#" class="overlay"></a>
-        <div class="col__wrapper-logo ">
-			<?php the_post_thumbnail(); ?>
+        <div class="col__wrapper-logo inner">
+            <a href="#logo">            <?php the_post_thumbnail(); ?></a>
         </div>
         <div class="col__wrapper-rating inner">
             <div class="col__wrapper-rating-review">
                 <div class="col__wrapper-rating-review-star">
-                    <img src="<?= get_site_url()?>/wp-content/uploads/2022/03/Star.svg"
-                         alt=""><img src="<?= get_site_url()?>/wp-content/uploads/2022/03/Star.svg"
-                         alt=""><img src="<?= get_site_url()?>/wp-content/uploads/2022/03/Star.svg"
-                         alt=""><img src="<?= get_site_url()?>/wp-content/uploads/2022/03/Star.svg"
-                         alt=""><img src="<?= get_site_url()?>/wp-content/uploads/2022/03/Star.svg"
-                         alt="">
+                    <img src="<?= get_site_url() ?>/wp-content/uploads/2022/03/Star.svg"
+                         alt=""><img
+                            src="<?= get_site_url() ?>/wp-content/uploads/2022/03/Star.svg"
+                            alt=""><img
+                            src="<?= get_site_url() ?>/wp-content/uploads/2022/03/Star.svg"
+                            alt=""><img
+                            src="<?= get_site_url() ?>/wp-content/uploads/2022/03/Star.svg"
+                            alt=""><img
+                            src="<?= get_site_url() ?>/wp-content/uploads/2022/03/Star.svg"
+                            alt="">
 
                 </div>
 
-                <a href="#12"
+                <a href="#review"
                    class="col__wrapper-rating-review-text"><?php _e( 'Read Review' ) ?></a>
             </div>
         </div>
@@ -30,8 +34,9 @@
                             class="bold"><?php _e( ' $200' ) ?></span></span>
             </p></div>
         <div class="col__wrapper-button  inner">
-            <a href="#1"><span><?php _e( 'Play now' ) ?>   </span>         <img src="http://localhost:8888/visca_web/wp-content/uploads/2022/03/Vector.svg" alt="">
-            </a>
+            <span><?php _e( 'Play now' ) ?>   </span> <img
+                        src="http://localhost:8888/visca_web/wp-content/uploads/2022/03/Vector.svg"
+                        alt="">
         </div>
     </div>
 </div>

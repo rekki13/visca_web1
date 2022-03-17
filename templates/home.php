@@ -2,7 +2,7 @@
 
 <?php get_header();
 ?>
-    <div class="container">
+    <div class="container home-wrapper" >
         <div class="row__heading">
             <div class="row__heading-col-sort">
                 <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">

@@ -38,10 +38,10 @@
             </div>
             <div class="header__row-right">
                 <nav id="site-navigation" class="main-navigation">
-                    <button class="menu-toggle" aria-controls="primary-menu"
-                            aria-expanded="false"><?php esc_html_e( 'Primary Menu',
-							'visca-web' ); ?></button>
-					<?php
+                    <a href="#" class="menu-btn">
+                        <span></span>
+                    </a>
+                    <?php
 					wp_nav_menu(
 						array(
 							'theme_location' => 'menu-1',
