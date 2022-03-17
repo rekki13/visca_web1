@@ -5,7 +5,17 @@
     <div class="container">
         <div class="row__heading">
             <div class="row__heading-col-sort">
-                <p><?php _e( 'Sort Alphabetically' ) ?></p>
+                <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
+
+                    <label>
+                        <input type="radio" name="date" value="ASC" selected="selected" style="display: none" />
+                        <p><?php _e( 'Sort Alphabetically' ) ?></p>
+
+                    </label>
+
+
+                    <input type="hidden" name="action" value="myfilter">
+                </form>
             </div>
             <div class="row__heading-col-text">
                 <img src="<?= get_site_url() ?>/wp-content/uploads/2022/03/Flag_of_Canada.svg"
@@ -30,13 +40,16 @@
 			'post_type'      => 'rekki_sports_sites',
 			'post_status'    => 'publish',
 			'posts_per_page' => 5,
-			'orderby'        => 'title',
-			'order'          => 'ASC',
+			'orderby'        => 'date',
+			'order'          => 'DESC',
 		);
 
 		$loop = new WP_Query( $args );
 
 		?>
+        <div id="response"></div>
+
+
         <div class="row__sites grid" id="damn">
 			<?php
 			while ( $loop->have_posts() ) : $loop->the_post();

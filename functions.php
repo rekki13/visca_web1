@@ -183,7 +183,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 function my_scripts_method(){
-	wp_enqueue_script( 'rekki-jquery',  'https://code.jquery.com/jquery-3.6.0.slim.min.js',array(),null,true);
+	wp_enqueue_script( 'rekki-jquery',  'https://code.jquery.com/jquery-3.6.0.js',array(),null,true);
 	wp_enqueue_script( 'rekki-script', get_template_directory_uri() . '/js/script.js','rekki-jquery-js',null,true);
 }
 
@@ -222,4 +222,31 @@ function register_post_types(){
 		'rewrite' => array('slug' => 'sites'),
 		'query_var'           => true,
 	] );
+}
+add_action('wp_ajax_myfilter', 'misha_filter_function'); // wp_ajax_{ACTION HERE}
+add_action('wp_ajax_nopriv_myfilter', 'misha_filter_function');
+
+function misha_filter_function(){
+
+$args = array(
+	'post_type'      => 'rekki_sports_sites',
+	'post_status'    => 'publish',
+	'posts_per_page' => 5,
+	'orderby' => 'title', // we will sort posts by date
+	'order'	=> $_POST['date'] // ASC or DESC
+);
+
+
+	$query = new WP_Query( $args );
+
+	if( $query->have_posts() ) :
+		while( $query->have_posts() ): $query->the_post();
+			get_template_part( 'template-parts/sites' );
+		endwhile;
+		wp_reset_postdata();
+	else :
+		echo 'No posts found';
+	endif;
+
+	die();
 }

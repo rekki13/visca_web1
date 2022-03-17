@@ -30,7 +30,8 @@
                             class="bold"><?php _e( ' $200' ) ?></span></span>
             </p></div>
         <div class="col__wrapper-button  inner">
-            <a href="#1"><?php _e( 'Play now' ) ?></a>
+            <a href="#1"><span><?php _e( 'Play now' ) ?>   </span>         <img src="http://localhost:8888/visca_web/wp-content/uploads/2022/03/Vector.svg" alt="">
+            </a>
         </div>
     </div>
 </div>
