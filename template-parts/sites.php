@@ -2,7 +2,7 @@
     <div class="row__sites-col__wrapper">
         <a href="#" class="overlay"></a>
         <div class="col__wrapper-logo inner">
-            <a href="<?php the_permalink()?>"> <?php the_post_thumbnail(); ?></a>
+            <a href="<?php the_permalink()?>" name="<?php the_title()?>"> <?php the_post_thumbnail(); ?></a>
         </div>
         <div class="col__wrapper-rating inner">
             <div class="col__wrapper-rating-review">
